@@ -67,7 +67,7 @@ If a Reed reports a model that seems wrong or impossible, stop and verify before
 Recommended fix:
 
 - ask the Reed to confirm its model identity
-- for Gemini, use `/model` and switch to the highest available model manually
+- for Antigravity/Gemini, use `/model` and switch to the highest available model manually
 - rerun the round if the model was wrong
 
 Do not treat a questionable model identity as harmless.

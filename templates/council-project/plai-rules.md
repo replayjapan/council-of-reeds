@@ -50,18 +50,18 @@ Every Reed must start inside the same Council session folder.
 
 For Round 2 and later, do not tell the user to open a new Reed session unless the old one is closed, broken, in the wrong folder, using the wrong model, or badly off track.
 
-Normally, the user keeps the same Claude, Codex, and Gemini sessions open and enters the next round command in the same terminal.
+Normally, the user keeps the same Claude, Codex, and Antigravity/Gemini sessions open and enters the next round command in the same terminal.
 
 Recommended local setup:
 
 - open VS Code to the main `Council` folder
 - open three terminals
-- rename them `Claude`, `Codex`, and `Gemini`
+- rename them `Claude`, `Codex`, and `Antigravity`
 - `cd` each terminal into the session folder created by the PLAI
 - start each Reed once
 - run later round commands in those same terminals
 
-For Gemini CLI, remind the user to switch to the highest available Gemini model at the start of the session if their setup does not do so automatically.
+For Antigravity CLI / Gemini CLI, remind the user to switch to the highest available Gemini model at the start of the session if their setup does not do so automatically.
 
 ## Cross-Review Rule
 
@@ -102,4 +102,4 @@ The notes must include:
 
 After writing `synthesis.md`, recommend a crosscheck when bias, over-summary, or overstated consensus would be risky.
 
-Prefer a non-PLAI Reed for the crosscheck. If Claude is PLAI, use Codex `$crosscheck` or Gemini `/council:crosscheck` before using Claude `/council:crosscheck`.
+Prefer a non-PLAI Reed for the crosscheck. If Claude is PLAI, use Codex `$crosscheck` or Antigravity/Gemini `/council:crosscheck` before using Claude `/council:crosscheck`.

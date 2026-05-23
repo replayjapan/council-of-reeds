@@ -2,7 +2,7 @@
 
 Run all rounds from the same Council session folder.
 
-For Round 2 and later, normally keep the same Claude, Codex, and Gemini sessions open. Enter the next round command in the same terminal instead of starting a new AI session.
+For Round 2 and later, normally keep the same Claude, Codex, and Antigravity/Gemini sessions open. Enter the next round command in the same terminal instead of starting a new AI session.
 
 Only restart a Reed session if it is closed, broken, in the wrong folder, using the wrong model, or badly off track.
 
@@ -79,7 +79,7 @@ After the PLAI writes `synthesis.md`, use crosscheck when you want another Reed 
 Prefer a non-PLAI Reed:
 
 - Codex: `$crosscheck`
-- Gemini CLI: `/council:crosscheck`
+- Antigravity CLI / Gemini CLI: `/council:crosscheck`
 - Claude Code: `/council:crosscheck`
 
 If Claude is the PLAI, Claude crosscheck should be treated as fallback because it is not independent model-family review.

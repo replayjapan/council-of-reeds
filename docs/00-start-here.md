@@ -55,7 +55,7 @@ This installs:
 ```text
 Claude Code: /council:round1
 Codex: $round1
-Gemini CLI: /council:round1
+Antigravity CLI / Gemini CLI: /council:round1
 ...
 Round 10, final, and crosscheck commands are also installed.
 ```
@@ -133,7 +133,7 @@ Recommended VS Code setup:
 
 1. Open VS Code to the main `Council` folder.
 2. Open three terminals.
-3. Rename the terminals `Claude`, `Codex`, and `Gemini`.
+3. Rename the terminals `Claude`, `Codex`, and `Antigravity`.
 4. In each terminal, `cd` into the session folder the PLAI created.
 5. Start one Reed in each terminal.
 6. Keep those terminals open for the whole Council when possible.
@@ -159,8 +159,10 @@ Codex:
 codex -p council
 $round1
 
-Gemini CLI:
-gemini
+Antigravity CLI / Gemini CLI:
+agy
+# or, while Gemini CLI is still available:
+# gemini
 /model
 choose the highest available Gemini model
 /council:round1
@@ -177,7 +179,7 @@ Use only the next command:
 ```text
 Claude Code: /council:round2
 Codex: $round2
-Gemini CLI: /council:round2
+Antigravity CLI / Gemini CLI: /council:round2
 ```
 
 After all Reeds finish each round, tell the PLAI:
@@ -193,7 +195,7 @@ When the PLAI says final positions are ready:
 ```text
 Claude Code: /council:final
 Codex: $final
-Gemini CLI: /council:final
+Antigravity CLI / Gemini CLI: /council:final
 ```
 
 After the PLAI writes `synthesis.md`, use crosscheck when useful:
@@ -201,7 +203,7 @@ After the PLAI writes `synthesis.md`, use crosscheck when useful:
 ```text
 Claude Code: /council:crosscheck
 Codex: $crosscheck
-Gemini CLI: /council:crosscheck
+Antigravity CLI / Gemini CLI: /council:crosscheck
 ```
 
 Prefer a non-PLAI Reed for crosscheck.

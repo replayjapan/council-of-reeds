@@ -38,7 +38,7 @@ Example Reeds:
 
 - Claude Code
 - Codex
-- Gemini CLI
+- Antigravity CLI, or Gemini CLI while still available
 - another AI agent that can read/write the folder
 
 The recommended setup uses three Reeds. A two-Reed Council is still useful. One Reed is not really a Council.

@@ -20,7 +20,7 @@ The recommended setup uses:
 - Claude Desktop or the Codex app as the PLAI
 - Claude Code as one Reed
 - Codex CLI as one Reed
-- Gemini CLI as one Reed
+- Antigravity CLI, or Gemini CLI while still available, as one Reed
 - VS Code to view the Council folder and keep Reed terminals organized
 
 Use a Council for complex work such as:
@@ -88,10 +88,12 @@ codex -p council
 $round1
 ```
 
-Gemini CLI:
+Antigravity CLI / Gemini CLI:
 
 ```text
-gemini
+agy
+# or, while Gemini CLI is still available:
+# gemini
 /model
 choose the highest available Gemini model
 /council:round1
@@ -113,6 +115,8 @@ council-of-reeds/
   install/
   examples/
 ```
+
+The `gemini-cli-commands` folder name is historical. The commands are TOML custom commands installed to `.gemini/commands/council/`, which is also the structure used by Antigravity CLI.
 
 ## Worked Example
 

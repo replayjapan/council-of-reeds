@@ -45,17 +45,17 @@ Before Round 1 starts, show me:
 - startup instructions for each Reed
 - the exact Round 1 prompt to paste into each Reed
 
-When giving Reed instructions for Round 1, include the exact `cd` path to the session folder. For later rounds, do not tell the user to open a new Reed session unless the old one is broken, closed, using the wrong folder, or using the wrong model. Normally the user keeps the same Claude, Codex, and Gemini sessions open and enters the next round command in the same terminal.
+When giving Reed instructions for Round 1, include the exact `cd` path to the session folder. For later rounds, do not tell the user to open a new Reed session unless the old one is broken, closed, using the wrong folder, or using the wrong model. Normally the user keeps the same Claude, Codex, and Antigravity/Gemini sessions open and enters the next round command in the same terminal.
 
 Recommend a simple VS Code layout:
 - open VS Code to the main Council folder
 - open three terminals
-- rename them Claude, Codex, and Gemini
+- rename them Claude, Codex, and Antigravity
 - `cd` each terminal into the session folder
 - start each Reed once
 - run the next round command in the same terminal when the PLAI says the next round is ready
 
-For Gemini CLI, remind the user to manually switch to the highest available Gemini model at the beginning of the session if their setup does not start on that model automatically.
+For Antigravity CLI / Gemini CLI, remind the user to manually switch to the highest available Gemini model at the beginning of the session if their setup does not start on that model automatically.
 
 Important operating rules:
 - Use my exact words as the source of truth.

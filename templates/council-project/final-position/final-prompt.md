@@ -16,4 +16,4 @@ Output files:
 
 - Claude Code: `final-position/claude.md`
 - Codex: `final-position/chatgpt.md`
-- Gemini CLI: `final-position/gemini.md`
+- Antigravity CLI / Gemini CLI: `final-position/gemini.md`

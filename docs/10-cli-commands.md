@@ -94,15 +94,21 @@ The skills are installed from:
 command-templates/codex-skills/council/
 ```
 
-## Gemini CLI
+## Antigravity CLI / Gemini CLI
 
-Start Gemini CLI in the Council project folder:
+Start Antigravity CLI in the Council project folder:
+
+```bash
+agy
+```
+
+If you are still using Gemini CLI while it is available, start it with:
 
 ```bash
 gemini
 ```
 
-At the start of the Gemini session, manually switch to the highest available Gemini model if your setup does not start there automatically.
+At the start of the Antigravity/Gemini session, manually switch to the highest available Gemini model if your setup does not start there automatically.
 
 Then run:
 
@@ -115,7 +121,7 @@ Then run:
 /council:crosscheck
 ```
 
-For Round 2 in the same Gemini session, just run:
+For Round 2 in the same Antigravity/Gemini session, just run:
 
 ```text
 /council:round2
@@ -126,6 +132,8 @@ The commands are installed from:
 ```text
 command-templates/gemini-cli-commands/council/
 ```
+
+That folder name is historical. The commands are TOML custom commands installed to `.gemini/commands/council/`, which is also the command structure used by Antigravity CLI.
 
 ## Updating From 5 Rounds To 10 Rounds
 
@@ -146,7 +154,7 @@ Prefer a Reed that is not the PLAI:
 
 ```text
 Codex: $crosscheck
-Gemini CLI: /council:crosscheck
+Antigravity CLI / Gemini CLI: /council:crosscheck
 Claude Code: /council:crosscheck
 ```
 

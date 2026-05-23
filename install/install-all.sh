@@ -72,9 +72,9 @@ echo "Installed Codex skills at: $CODEX_TARGET"
 echo "Commands: \$round1 through \$round10, \$final, \$crosscheck"
 echo
 
-echo "--- Installing Gemini CLI Council commands ---"
+echo "--- Installing Antigravity/Gemini Council commands ---"
 copy_dir "$GEMINI_SOURCE" "$GEMINI_TARGET"
-echo "Installed Gemini CLI commands at: $GEMINI_TARGET"
+echo "Installed Antigravity/Gemini commands at: $GEMINI_TARGET"
 echo "Commands: /council:round1 through /council:round10, /council:final, /council:crosscheck"
 echo
 
@@ -121,4 +121,5 @@ echo "Next steps:"
 echo "1. Run: source ~/.zshrc"
 echo "2. Claude Code: claude-council, then /council:round1"
 echo "3. Codex: codex -p council, then \$round1"
-echo "4. Gemini CLI: gemini, then /council:round1"
+echo "4. Antigravity CLI: agy, then /council:round1"
+echo "   Gemini CLI while available: gemini, then /council:round1"

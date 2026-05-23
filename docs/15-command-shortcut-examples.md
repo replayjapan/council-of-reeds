@@ -10,12 +10,12 @@ Round 1 example:
 
 ```text
 Open VS Code to the main Council folder.
-Open three terminals and rename them Claude, Codex, and Gemini.
+Open three terminals and rename them Claude, Codex, and Antigravity.
 In each terminal, cd into the session folder created by the PLAI.
 
 Claude Code: in the Claude terminal, run claude-council, then /council:round1
 Codex: in the Codex terminal, run codex -p council, then $round1
-Gemini CLI: in the Gemini terminal, run gemini, switch to the highest available Gemini model if needed, then /council:round1
+Antigravity CLI / Gemini CLI: in the Antigravity terminal, run agy, or gemini while Gemini CLI is still available, switch to the highest available Gemini model if needed, then /council:round1
 ```
 
 Round 2 example:
@@ -25,7 +25,7 @@ Use the same Reed terminals from Round 1.
 
 Claude Code: /council:round2
 Codex: $round2
-Gemini CLI: /council:round2
+Antigravity CLI / Gemini CLI: /council:round2
 ```
 
 Use the wording that matches your own setup. The important part is that every Reed terminal runs from the same Council session folder and writes to the exact file requested by the PLAI.

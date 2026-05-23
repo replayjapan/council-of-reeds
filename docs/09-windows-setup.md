@@ -22,7 +22,7 @@ This installs:
 ```text
 Claude Code: /council:round1
 Codex: $round1
-Gemini CLI: /council:round1
+Antigravity CLI / Gemini CLI: /council:round1
 ...
 Round 10, final, and crosscheck commands are also installed.
 ```
@@ -30,7 +30,7 @@ Round 10, final, and crosscheck commands are also installed.
 ## Installed Locations
 
 ```text
-C:\Users\YourName\Council\plugins\council\
+C:\Users\YourName\Documents\Council\plugins\council\
 C:\Users\YourName\.agents\skills\council\
 C:\Users\YourName\.gemini\commands\council\
 ```
@@ -40,7 +40,7 @@ C:\Users\YourName\.gemini\commands\council\
 Start Claude Code with the Council plugin:
 
 ```powershell
-claude --plugin-dir "$env:USERPROFILE\Council\plugins\council"
+claude --plugin-dir "$env:USERPROFILE\Documents\Council\plugins\council"
 ```
 
 Then run:
@@ -69,13 +69,15 @@ codex -p council
 
 If you do not use prompt profiles, start Codex normally in the project folder and paste the relevant prompt manually.
 
-## Gemini CLI
+## Antigravity CLI / Gemini CLI
 
 PowerShell example:
 
 ```powershell
 cd "$env:USERPROFILE\Documents\Council\projects\my-council"
-gemini
+agy
+# or, while Gemini CLI is still available:
+# gemini
 ```
 
 Then run `/council:round1`.

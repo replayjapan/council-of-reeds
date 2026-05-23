@@ -21,9 +21,11 @@ Recommended Reeds:
 
 - Claude Code
 - Codex CLI
-- Gemini CLI
+- Antigravity CLI, or Gemini CLI while still available
 
 The Reeds are the AIs that run the round commands and write responses into the session folder.
+
+Google announced that Gemini CLI access for individual/free Google AI users will stop serving requests on June 18, 2026. New setups should prefer Antigravity CLI. The Council commands still install to `.gemini/commands/council/` because Antigravity CLI uses that custom-command structure.
 
 ## Claude Desktop vs Claude Code
 
@@ -58,7 +60,7 @@ VS Code is recommended because it lets you:
 - open the main `Council` folder
 - see all session files
 - open three terminals
-- rename the terminals `Claude`, `Codex`, and `Gemini`
+- rename the terminals `Claude`, `Codex`, and `Antigravity`
 
 VS Code is not required, but it makes the workflow easier to follow.
 
@@ -67,7 +69,7 @@ VS Code is not required, but it makes the workflow easier to follow.
 Recommended:
 
 ```text
-3 Reeds: Claude Code, Codex, Gemini CLI
+3 Reeds: Claude Code, Codex, Antigravity CLI / Gemini CLI
 ```
 
 Minimum useful Council:

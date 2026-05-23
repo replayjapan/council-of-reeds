@@ -22,7 +22,7 @@ This installs:
 ```text
 Claude Code: /council:round1
 Codex: $round1
-Gemini CLI: /council:round1
+Antigravity CLI / Gemini CLI: /council:round1
 ...
 Round 10, final, and crosscheck commands are also installed.
 ```
@@ -84,13 +84,15 @@ codex -p council
 
 If you do not use prompt profiles, start Codex normally in the project folder and paste the relevant prompt manually.
 
-## Gemini CLI
+## Antigravity CLI / Gemini CLI
 
 Example:
 
 ```bash
 cd ~/Documents/Council/projects/my-council
-gemini
+agy
+# or, while Gemini CLI is still available:
+# gemini
 ```
 
 Then run `/council:round1`.

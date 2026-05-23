@@ -70,9 +70,9 @@ Write-Host "Installed Codex skills at: $CodexTarget"
 Write-Host "Commands: `$round1 through `$round10, `$final, `$crosscheck"
 Write-Host ""
 
-Write-Host "--- Installing Gemini CLI Council commands ---"
+Write-Host "--- Installing Antigravity/Gemini Council commands ---"
 Copy-DirectoryClean $GeminiSource $GeminiTarget
-Write-Host "Installed Gemini CLI commands at: $GeminiTarget"
+Write-Host "Installed Antigravity/Gemini commands at: $GeminiTarget"
 Write-Host "Commands: /council:round1 through /council:round10, /council:final, /council:crosscheck"
 Write-Host ""
 
@@ -107,4 +107,5 @@ Write-Host ""
 Write-Host "Next steps:"
 Write-Host "1. Claude Code: claude --plugin-dir `"$ClaudeTarget`", then /council:round1"
 Write-Host "2. Codex: codex -p council, then `$round1"
-Write-Host "3. Gemini CLI: gemini, then /council:round1"
+Write-Host "3. Antigravity CLI: agy, then /council:round1"
+Write-Host "   Gemini CLI while available: gemini, then /council:round1"

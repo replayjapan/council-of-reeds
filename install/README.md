@@ -1,6 +1,6 @@
 # Installers
 
-These scripts install optional Council of Reeds commands for Claude Code, Codex, and Gemini CLI.
+These scripts install optional Council of Reeds commands for Claude Code, Codex, and Antigravity CLI / Gemini CLI.
 
 They copy command templates from:
 
@@ -60,7 +60,7 @@ $final
 $crosscheck
 ```
 
-Gemini CLI:
+Antigravity CLI / Gemini CLI:
 
 ```text
 /council:round1

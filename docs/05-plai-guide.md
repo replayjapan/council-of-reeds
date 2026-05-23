@@ -62,7 +62,7 @@ Before writing important prompts, source-of-truth edits, or `plai-notes.md` to d
 
 For Round 1, tell the user to start each Reed inside the Council session folder.
 
-For Round 2 and later, do not imply that the user must open new AI sessions. Normally they should keep the same Claude, Codex, and Gemini terminals open and enter the next round command in the existing session.
+For Round 2 and later, do not imply that the user must open new AI sessions. Normally they should keep the same Claude, Codex, and Antigravity/Gemini terminals open and enter the next round command in the existing session.
 
 Only recommend a new Reed session when:
 
@@ -114,12 +114,12 @@ For local CLI use, recommend this simple setup:
 
 1. Open VS Code to the main `Council` folder.
 2. Open three terminals.
-3. Rename them `Claude`, `Codex`, and `Gemini`.
+3. Rename them `Claude`, `Codex`, and `Antigravity`.
 4. In each terminal, `cd` into the session folder created by the PLAI.
 5. Start one Reed in each terminal.
 6. Keep those sessions open for the whole Council when possible.
 
-Gemini users should manually switch to the highest available Gemini model at the start of the session if their setup does not do that automatically.
+Antigravity/Gemini users should manually switch to the highest available Gemini model at the start of the session if their setup does not do that automatically.
 
 ## Crosscheck
 
@@ -127,9 +127,9 @@ After the PLAI writes `synthesis.md`, the user may run a crosscheck.
 
 Prefer a non-PLAI Reed for crosscheck:
 
-- if Claude is PLAI, use Codex `$crosscheck` or Gemini `/council:crosscheck`
-- if Codex is PLAI, use Claude `/council:crosscheck` or Gemini `/council:crosscheck`
-- if Gemini is PLAI, use Claude `/council:crosscheck` or Codex `$crosscheck`
+- if Claude is PLAI, use Codex `$crosscheck` or Antigravity/Gemini `/council:crosscheck`
+- if Codex is PLAI, use Claude `/council:crosscheck` or Antigravity/Gemini `/council:crosscheck`
+- if Antigravity/Gemini is PLAI, use Claude `/council:crosscheck` or Codex `$crosscheck`
 
 The crosscheck should audit whether the PLAI overstated consensus, softened dissent, or framed the synthesis unfairly.
 

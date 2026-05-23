@@ -15,4 +15,4 @@ Output files:
 
 - Claude Code: `round-1/claude.md`
 - Codex: `round-1/chatgpt.md`
-- Gemini CLI: `round-1/gemini.md`
+- Antigravity CLI / Gemini CLI: `round-1/gemini.md`
