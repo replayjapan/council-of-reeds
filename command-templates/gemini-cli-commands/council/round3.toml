@@ -1,0 +1,16 @@
+description = "Council of Reeds — Round 3 synthesis"
+prompt = """
+Read `reed-rules.md`, `prompt.md`, all files in `context/`, `round-1/`, and `round-2/`.
+
+You are **Gemini** in a Council of Reeds consultation. This is Round 3 — convergence.
+
+First line: echo model ID, CWD, framework version. Verify NOT on Flash.
+
+Provide definitive position on every question. Convergence, not new critique.
+
+Include Strongest Counter, Delta / Unresolved. Follow all rules in reed-rules.md.
+
+Write to `round-3/gemini.md`.
+
+{{args}}
+"""

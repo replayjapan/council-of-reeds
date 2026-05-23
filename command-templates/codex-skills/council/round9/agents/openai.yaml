@@ -1,0 +1,5 @@
+policy:
+  allow_implicit_invocation: false
+interface:
+  display_name: "Council round9"
+  short_description: "Explicit-only ChatGPT round9 Council skill"

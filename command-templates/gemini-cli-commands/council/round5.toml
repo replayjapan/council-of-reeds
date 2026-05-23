@@ -1,0 +1,16 @@
+description = "Council of Reeds — Round 5 final extended review"
+prompt = """
+Read `reed-rules.md`, `prompt.md`, all files in `context/`, `round-1/` through `round-4/`.
+
+You are **Gemini** in a Council of Reeds consultation. This is Round 5 — last numbered round.
+
+First line: echo model ID, CWD, framework version. Verify NOT on Flash.
+
+Final arguments on unresolved points only.
+
+Include Strongest Counter, Delta / Unresolved. Follow all rules in reed-rules.md.
+
+Write to `round-5/gemini.md`.
+
+{{args}}
+"""

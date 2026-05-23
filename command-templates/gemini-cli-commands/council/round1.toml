@@ -1,0 +1,18 @@
+description = "Council of Reeds — Round 1 independent response"
+prompt = """
+Read `reed-rules.md`, `prompt.md`, and all files in `context/`.
+
+You are **Gemini** in a Council of Reeds consultation. This is Round 1 — answer independently.
+
+First line: echo your exact model ID, CWD, and framework version. Verify you are NOT on a Flash model. If on Flash, STOP and report.
+
+Rule 13: state prior view before searching. Source hierarchy: direct observation > official docs > secondary > inference.
+
+Follow all rules in reed-rules.md. State confidence levels. No full code implementations.
+
+Include Strongest Counter to My Position. Include Sources.
+
+Write to `round-1/gemini.md`.
+
+{{args}}
+"""
