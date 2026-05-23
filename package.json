@@ -1,0 +1,34 @@
+{
+  "name": "council-of-reeds",
+  "version": "0.1.0",
+  "description": "Structured multi-AI council workflow templates and setup helpers.",
+  "keywords": [
+    "ai",
+    "council",
+    "multi-agent",
+    "claude",
+    "codex",
+    "gemini",
+    "workflow",
+    "prompting"
+  ],
+  "homepage": "https://github.com/replayjapan/council-of-reeds#readme",
+  "bugs": {
+    "url": "https://github.com/replayjapan/council-of-reeds/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/replayjapan/council-of-reeds.git"
+  },
+  "license": "MIT",
+  "author": "rePlay LLC, Tokyo, Japan",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
