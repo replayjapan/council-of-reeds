@@ -35,6 +35,31 @@ require_dir "$CLAUDE_SOURCE"
 require_dir "$CODEX_SOURCE"
 require_dir "$GEMINI_SOURCE"
 
+existing_targets=()
+for target in "$CLAUDE_TARGET" "$CODEX_TARGET" "$GEMINI_TARGET"; do
+  if [ -e "$target" ]; then
+    existing_targets+=("$target")
+  fi
+done
+
+if [ "${#existing_targets[@]}" -gt 0 ]; then
+  echo "Existing Council command folders were found:"
+  for target in "${existing_targets[@]}"; do
+    echo "  - $target"
+  done
+  echo
+  echo "This installer will replace those Council command folders."
+  echo "Your Council projects and past round outputs will not be touched."
+  echo "Do not continue if you placed custom non-Council files inside those folders."
+  echo
+  read -r -p "Continue and replace the existing Council command folders? [y/N] " confirm
+  if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+    echo "Install cancelled."
+    exit 0
+  fi
+  echo
+fi
+
 echo "--- Installing Claude Code Council plugin ---"
 copy_dir "$CLAUDE_SOURCE" "$CLAUDE_TARGET"
 echo "Installed Claude Code plugin at: $CLAUDE_TARGET"

@@ -38,6 +38,26 @@ Require-Directory $ClaudeSource
 Require-Directory $CodexSource
 Require-Directory $GeminiSource
 
+$ExistingTargets = @($ClaudeTarget, $CodexTarget, $GeminiTarget) | Where-Object { Test-Path $_ }
+
+if ($ExistingTargets.Count -gt 0) {
+    Write-Host "Existing Council command folders were found:"
+    foreach ($Target in $ExistingTargets) {
+        Write-Host "  - $Target"
+    }
+    Write-Host ""
+    Write-Host "This installer will replace those Council command folders."
+    Write-Host "Your Council projects and past round outputs will not be touched."
+    Write-Host "Do not continue if you placed custom non-Council files inside those folders."
+    Write-Host ""
+    $Confirm = Read-Host "Continue and replace the existing Council command folders? [y/N]"
+    if ($Confirm -notmatch "^[Yy]$") {
+        Write-Host "Install cancelled."
+        exit 0
+    }
+    Write-Host ""
+}
+
 Write-Host "--- Installing Claude Code Council plugin ---"
 Copy-DirectoryClean $ClaudeSource $ClaudeTarget
 Write-Host "Installed Claude Code plugin at: $ClaudeTarget"
