@@ -7,6 +7,7 @@ They copy command templates from:
 ```text
 command-templates/claude-code-plugin/
 command-templates/codex-skills/
+command-templates/antigravity-plugin/
 command-templates/gemini-cli-commands/
 ```
 
@@ -15,6 +16,7 @@ to the user's local command folders:
 ```text
 ~/Documents/Council/plugins/council/
 ~/.agents/skills/council/
+~/.gemini/antigravity-cli/plugins/council/
 ~/.gemini/commands/council/
 ```
 

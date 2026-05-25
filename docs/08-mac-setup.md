@@ -32,6 +32,7 @@ Round 10, final, and crosscheck commands are also installed.
 ```text
 ~/Documents/Council/plugins/council/
 ~/.agents/skills/council/
+~/.gemini/antigravity-cli/plugins/council/
 ~/.gemini/commands/council/
 ```
 

@@ -6,10 +6,12 @@ $RepoRoot = Resolve-Path (Join-Path $ScriptDir "..")
 $ClaudeSource = Join-Path $RepoRoot "command-templates\claude-code-plugin\council"
 $CodexSource = Join-Path $RepoRoot "command-templates\codex-skills\council"
 $GeminiSource = Join-Path $RepoRoot "command-templates\gemini-cli-commands\council"
+$AntigravitySource = Join-Path $RepoRoot "command-templates\antigravity-plugin\council"
 
 $ClaudeTarget = if ($env:COUNCIL_CLAUDE_PLUGIN_DIR) { $env:COUNCIL_CLAUDE_PLUGIN_DIR } else { Join-Path $HOME "Documents\Council\plugins\council" }
 $CodexTarget = if ($env:COUNCIL_CODEX_SKILLS_DIR) { $env:COUNCIL_CODEX_SKILLS_DIR } else { Join-Path $HOME ".agents\skills\council" }
 $GeminiTarget = if ($env:COUNCIL_GEMINI_COMMANDS_DIR) { $env:COUNCIL_GEMINI_COMMANDS_DIR } else { Join-Path $HOME ".gemini\commands\council" }
+$AntigravityTarget = if ($env:COUNCIL_ANTIGRAVITY_PLUGIN_DIR) { $env:COUNCIL_ANTIGRAVITY_PLUGIN_DIR } else { Join-Path $HOME ".gemini\antigravity-cli\plugins\council" }
 
 function Require-Directory {
     param([string]$Path)
@@ -37,8 +39,9 @@ Write-Host ""
 Require-Directory $ClaudeSource
 Require-Directory $CodexSource
 Require-Directory $GeminiSource
+Require-Directory $AntigravitySource
 
-$ExistingTargets = @($ClaudeTarget, $CodexTarget, $GeminiTarget) | Where-Object { Test-Path $_ }
+$ExistingTargets = @($ClaudeTarget, $CodexTarget, $GeminiTarget, $AntigravityTarget) | Where-Object { Test-Path $_ }
 
 if ($ExistingTargets.Count -gt 0) {
     Write-Host "Existing Council command folders were found:"
@@ -70,9 +73,21 @@ Write-Host "Installed Codex skills at: $CodexTarget"
 Write-Host "Commands: `$round1 through `$round10, `$final, `$crosscheck"
 Write-Host ""
 
-Write-Host "--- Installing Antigravity/Gemini Council commands ---"
+Write-Host "--- Installing Gemini CLI legacy Council commands ---"
 Copy-DirectoryClean $GeminiSource $GeminiTarget
-Write-Host "Installed Antigravity/Gemini commands at: $GeminiTarget"
+Write-Host "Installed Gemini CLI legacy commands at: $GeminiTarget"
+Write-Host "Commands: /council:round1 through /council:round10, /council:final, /council:crosscheck"
+Write-Host ""
+
+Write-Host "--- Installing Antigravity CLI Council plugin ---"
+if (Get-Command agy -ErrorAction SilentlyContinue) {
+    & agy plugin install $AntigravitySource
+    Write-Host "Installed Antigravity CLI plugin from: $AntigravitySource"
+} else {
+    Copy-DirectoryClean $AntigravitySource $AntigravityTarget
+    Write-Host "agy was not found, so the plugin files were copied directly."
+    Write-Host "Installed Antigravity CLI plugin at: $AntigravityTarget"
+}
 Write-Host "Commands: /council:round1 through /council:round10, /council:final, /council:crosscheck"
 Write-Host ""
 

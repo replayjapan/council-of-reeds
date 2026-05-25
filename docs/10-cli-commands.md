@@ -127,13 +127,19 @@ For Round 2 in the same Antigravity/Gemini session, just run:
 /council:round2
 ```
 
-The commands are installed from:
+The Antigravity plugin is installed from:
+
+```text
+command-templates/antigravity-plugin/council/
+```
+
+The Gemini CLI legacy commands are installed from:
 
 ```text
 command-templates/gemini-cli-commands/council/
 ```
 
-That folder name is historical. The commands are TOML custom commands installed to `.gemini/commands/council/`, which is also the command structure used by Antigravity CLI.
+Antigravity CLI uses plugin skills under `.gemini/antigravity-cli/plugins/council/`. Gemini CLI legacy uses TOML commands under `.gemini/commands/council/`.
 
 ## Updating From 5 Rounds To 10 Rounds
 

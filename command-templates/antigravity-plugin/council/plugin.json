@@ -1,0 +1,12 @@
+{
+  "name": "council",
+  "version": "0.1.0",
+  "description": "Council of Reeds commands for Antigravity CLI.",
+  "author": {
+    "name": "rePlay LLC, Tokyo, Japan"
+  },
+  "homepage": "https://github.com/replayjapan/council-of-reeds",
+  "repository": "https://github.com/replayjapan/council-of-reeds",
+  "license": "MIT",
+  "keywords": ["council", "multi-ai", "workflow", "reeds"]
+}

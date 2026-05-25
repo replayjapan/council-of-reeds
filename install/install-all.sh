@@ -7,10 +7,12 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 CLAUDE_SOURCE="$REPO_ROOT/command-templates/claude-code-plugin/council"
 CODEX_SOURCE="$REPO_ROOT/command-templates/codex-skills/council"
 GEMINI_SOURCE="$REPO_ROOT/command-templates/gemini-cli-commands/council"
+ANTIGRAVITY_SOURCE="$REPO_ROOT/command-templates/antigravity-plugin/council"
 
 CLAUDE_TARGET="${COUNCIL_CLAUDE_PLUGIN_DIR:-$HOME/Documents/Council/plugins/council}"
 CODEX_TARGET="${COUNCIL_CODEX_SKILLS_DIR:-$HOME/.agents/skills/council}"
 GEMINI_TARGET="${COUNCIL_GEMINI_COMMANDS_DIR:-$HOME/.gemini/commands/council}"
+ANTIGRAVITY_TARGET="${COUNCIL_ANTIGRAVITY_PLUGIN_DIR:-$HOME/.gemini/antigravity-cli/plugins/council}"
 
 echo "=== Council of Reeds — Installing CLI Commands ==="
 echo
@@ -34,9 +36,10 @@ copy_dir() {
 require_dir "$CLAUDE_SOURCE"
 require_dir "$CODEX_SOURCE"
 require_dir "$GEMINI_SOURCE"
+require_dir "$ANTIGRAVITY_SOURCE"
 
 existing_targets=()
-for target in "$CLAUDE_TARGET" "$CODEX_TARGET" "$GEMINI_TARGET"; do
+for target in "$CLAUDE_TARGET" "$CODEX_TARGET" "$GEMINI_TARGET" "$ANTIGRAVITY_TARGET"; do
   if [ -e "$target" ]; then
     existing_targets+=("$target")
   fi
@@ -72,9 +75,21 @@ echo "Installed Codex skills at: $CODEX_TARGET"
 echo "Commands: \$round1 through \$round10, \$final, \$crosscheck"
 echo
 
-echo "--- Installing Antigravity/Gemini Council commands ---"
+echo "--- Installing Gemini CLI legacy Council commands ---"
 copy_dir "$GEMINI_SOURCE" "$GEMINI_TARGET"
-echo "Installed Antigravity/Gemini commands at: $GEMINI_TARGET"
+echo "Installed Gemini CLI legacy commands at: $GEMINI_TARGET"
+echo "Commands: /council:round1 through /council:round10, /council:final, /council:crosscheck"
+echo
+
+echo "--- Installing Antigravity CLI Council plugin ---"
+if command -v agy >/dev/null 2>&1; then
+  agy plugin install "$ANTIGRAVITY_SOURCE"
+  echo "Installed Antigravity CLI plugin from: $ANTIGRAVITY_SOURCE"
+else
+  copy_dir "$ANTIGRAVITY_SOURCE" "$ANTIGRAVITY_TARGET"
+  echo "agy was not found, so the plugin files were copied directly."
+  echo "Installed Antigravity CLI plugin at: $ANTIGRAVITY_TARGET"
+fi
 echo "Commands: /council:round1 through /council:round10, /council:final, /council:crosscheck"
 echo
 
@@ -103,13 +118,42 @@ echo
 
 echo "--- Checking shell alias ---"
 ZSHRC="$HOME/.zshrc"
+desired_alias="alias claude-council='claude --plugin-dir \"$CLAUDE_TARGET\"'"
 if [ -f "$ZSHRC" ] && grep -q "alias claude-council=" "$ZSHRC"; then
-  echo "claude-council alias already exists in ~/.zshrc."
+  current_alias="$(grep "alias claude-council=" "$ZSHRC" | tail -n 1)"
+  if [ "$current_alias" = "$desired_alias" ]; then
+    echo "claude-council alias already points to: $CLAUDE_TARGET"
+  else
+    backup="$ZSHRC.council-backup-$(date +%Y%m%d%H%M%S)"
+    cp "$ZSHRC" "$backup"
+    tmp_file="$(mktemp)"
+    awk -v desired="$desired_alias" '
+      BEGIN { replaced = 0 }
+      /^alias claude-council=/ {
+        if (!replaced) {
+          print desired
+          replaced = 1
+        }
+        next
+      }
+      { print }
+      END {
+        if (!replaced) {
+          print ""
+          print "# Council of Reeds"
+          print desired
+        }
+      }
+    ' "$ZSHRC" > "$tmp_file"
+    mv "$tmp_file" "$ZSHRC"
+    echo "Updated stale claude-council alias in ~/.zshrc."
+    echo "Backup saved at: $backup"
+  fi
 else
-  cat >> "$ZSHRC" << 'EOF'
+  cat >> "$ZSHRC" << EOF
 
 # Council of Reeds
-alias claude-council='claude --plugin-dir ~/Documents/Council/plugins/council'
+${desired_alias}
 EOF
   echo "Added claude-council alias to ~/.zshrc."
 fi

@@ -25,7 +25,9 @@ Recommended Reeds:
 
 The Reeds are the AIs that run the round commands and write responses into the session folder.
 
-Google announced that Gemini CLI access for individual/free Google AI users will stop serving requests on June 18, 2026. New setups should prefer Antigravity CLI. The Council commands still install to `.gemini/commands/council/` because Antigravity CLI uses that custom-command structure.
+Google announced that Gemini CLI access for individual/free Google AI users will stop serving requests on June 18, 2026. New setups should prefer Antigravity CLI.
+
+Antigravity CLI and Gemini CLI use different install mechanisms. Antigravity uses a plugin under `.gemini/antigravity-cli/plugins/council/`. Gemini CLI legacy uses TOML commands under `.gemini/commands/council/`.
 
 ## Claude Desktop vs Claude Code
 

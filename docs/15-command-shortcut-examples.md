@@ -37,6 +37,7 @@ Do not tell users to start a new Reed session for Round 2 unless the prior sessi
 ```text
 command-templates/claude-code-plugin/
 command-templates/codex-skills/
+command-templates/antigravity-plugin/
 command-templates/gemini-cli-commands/
 ```
 

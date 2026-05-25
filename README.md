@@ -111,12 +111,16 @@ council-of-reeds/
   command-templates/
     claude-code-plugin/
     codex-skills/
+    antigravity-plugin/
     gemini-cli-commands/
   install/
   examples/
 ```
 
-The `gemini-cli-commands` folder name is historical. The commands are TOML custom commands installed to `.gemini/commands/council/`, which is also the structure used by Antigravity CLI.
+Antigravity CLI and Gemini CLI use different install mechanisms:
+
+- Antigravity CLI uses a plugin installed under `.gemini/antigravity-cli/plugins/council/`.
+- Gemini CLI legacy uses TOML commands installed under `.gemini/commands/council/`.
 
 ## Worked Example
 
